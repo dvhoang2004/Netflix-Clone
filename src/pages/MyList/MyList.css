@@ -1,0 +1,203 @@
+.mylist-page {
+  min-height: 100vh;
+  background-color: #141414;
+  color: white;
+}
+
+.mylist-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 4% 60px;
+}
+
+/* Header */
+.mylist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #333;
+}
+
+.header-left h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.count {
+  color: #999;
+  font-size: 1.1rem;
+}
+
+.clear-all-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent;
+  border: 2px solid #e50914;
+  color: #e50914;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.clear-all-btn:hover {
+  background-color: #e50914;
+  color: white;
+}
+
+/* Empty State */
+.empty-state,
+.not-logged-in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.empty-state h2,
+.not-logged-in h2 {
+  font-size: 2rem;
+  margin: 20px 0 10px;
+}
+
+.empty-state p,
+.not-logged-in p {
+  color: #999;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.explore-btn,
+.login-btn {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  padding: 12px 40px;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.explore-btn:hover,
+.login-btn:hover {
+  background-color: #f40612;
+}
+
+/* Favorites Grid */
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.favorite-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  background-color: #1a1a1a;
+}
+
+.favorite-card:hover {
+  transform: scale(1.05);
+}
+
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: white;
+}
+
+.favorite-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-info {
+  padding: 15px;
+}
+
+.card-info h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.rating {
+  color: #ffd700;
+  font-size: 0.9rem;
+}
+
+.remove-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #e50914;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.favorite-card:hover .remove-btn {
+  opacity: 1;
+}
+
+.remove-btn:hover {
+  background-color: #f40612;
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mylist-container {
+    padding: 70px 15px 40px;
+  }
+
+  .mylist-header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .header-left h1 {
+    font-size: 2rem;
+  }
+
+  .favorites-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+  }
+
+  .favorite-card img {
+    height: 120px;
+  }
+
+  .card-info {
+    padding: 10px;
+  }
+
+  .card-info h3 {
+    font-size: 0.9rem;
+  }
+}
