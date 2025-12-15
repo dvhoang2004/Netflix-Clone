@@ -1,0 +1,166 @@
+.navbar {
+    width: 100%;
+    padding: 20px 6%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    font-size: 14px;
+    color: #e5e5e5;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 10%, transparent);
+    z-index: 1;
+}
+
+.navbar-left  {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.navbar-left img {
+    width: 90px;
+}
+
+.navbar-left ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar-left ul li {
+    cursor: pointer;
+}
+
+.navbar-left a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar-right .icon {
+    width: 30px;        
+    cursor: pointer;         
+}
+
+.navbar-right .profile {
+    width: 30px;
+    border-radius: 40%;
+    cursor: pointer; 
+}
+
+.navbar-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.navbar .dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: max-content;
+    background-color: white;
+    padding: 7px 10px;
+    color: black;
+    border-radius: 5%;
+    text-decoration: underline;
+    z-index: 1;
+    display: none;
+}
+
+.navbar .dropdown p {
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.navbar .dropdown p:hover { 
+    background-color: gray; 
+}
+
+.navbar-profile:hover .dropdown {
+    display: block;
+}
+
+.nav-dark {
+    background: #141414;
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        padding: 20px 4%;
+    }
+
+    .navbar-left ul {
+        display: none;
+    }
+
+    .navbar img {
+        height: 25px;
+    }
+}
+
+@media (max-width: 500px) {
+    .navbar img {
+        height: 20px;
+    }
+
+    .navbar-right {
+        gap: 10px;
+    }
+}
+
+/* Language Dropdown */
+.language-menu {
+    position: relative;
+}
+
+.language-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 0px;  
+    padding-top: 10px; 
+    background-color: rgba(0, 0, 0, 0.95);
+    border: 1px solid #333;
+    border-radius: 4px;
+    min-width: 200px;
+    max-height: 400px;
+    overflow-y: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+}
+
+.language-dropdown::-webkit-scrollbar {
+    width: 8px;
+}
+
+.language-dropdown::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+.language-dropdown::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+}
+
+.language-item {
+    padding: 10px 16px;
+    color: #e5e5e5;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.language-item:hover {
+    background-color: #333;
+}
+
+.language-item.active {
+    background-color: #333;
+    font-weight: bold;
+}

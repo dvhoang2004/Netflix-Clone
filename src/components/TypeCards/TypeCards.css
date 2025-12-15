@@ -1,0 +1,98 @@
+.more-cards {
+  padding-top: 80px;
+}
+
+.card-list {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    gap: 10px;
+    padding: 20px 0;
+}
+
+.card-list::-webkit-scrollbar {
+    display: none; /* Ẩn scrollbar nếu muốn */
+}
+
+.card {
+    flex: 0 0 auto; /* Quan trọng: không cho card shrink */
+    width: 300px; /* hoặc kích thước bạn muốn */
+}
+
+.card-wrapper {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.card {
+  position: relative;
+  display: block;
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.favorite-btn {
+  background: rgba(42, 42, 42, 0.9);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.favorite-btn:hover {
+  transform: scale(1.1);
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(42, 42, 42, 1);
+}
+
+.favorite-btn.favorited {
+  background: #e50914;
+  border-color: #e50914;
+}
+
+.favorite-btn.favorited:hover {
+  background: #f40612;
+  border-color: #f40612;
+}
+
+.favorite-indicator {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #e50914;
+  border-radius: 50%;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
